@@ -21,7 +21,14 @@ def calc_quadratic(a: float, b: float, c: float):
         print(f"x = {x}")
     else: 
         print("There are 0 roots")
-        
+
+def get_float_input(prompt):
+    while True:
+        try:
+            value = input(prompt).strip()
+            return float(value)
+        except ValueError:
+            print(f"Error. Expected a valid real number, got {value} instead.")            
+
 if __name__ == "__main__":
     calc_quadratic(1,2,0)
-

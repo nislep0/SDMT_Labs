@@ -65,5 +65,6 @@ python3 -m unittest tests.unit_test
 
 ## Вказання на revert-коміт
 [Revert "Add message that user should run program in different format"](https://github.com/nislep0/SDMT_Labs/commit/badd1e4982fa25bf2e0a6bcbde4039e61b9d7fdc)
+
 [Revert "Add unit tests for quadratic calculation"](https://github.com/nislep0/SDMT_Labs/commit/44c109f256a27eb37b04f48de7554dc0579a77b1)
 

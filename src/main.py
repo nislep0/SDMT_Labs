@@ -30,5 +30,14 @@ def get_float_input(prompt):
         except ValueError:
             print(f"Error. Expected a valid real number, got {value} instead.")            
 
+def interactive_mod():
+    a = get_float_input("a = ")
+    while a == 0:
+        print("Error. a cannot be 0")
+        a = get_float_input("a = ")
+    b = get_float_input("b = ")
+    c = get_float_input("c = ")
+    calc_quadratic(a,b,c)
+
 if __name__ == "__main__":
-    calc_quadratic(1,2,0)
+    interactive_mod()

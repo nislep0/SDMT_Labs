@@ -1,5 +1,6 @@
 import sys
 import math
+import os
 
 def calc_quadratic(a: float, b: float, c: float):
     if a == 0:
@@ -40,15 +41,28 @@ def interactive_mod():
     calc_quadratic(a,b,c)
 
 def file_mod(filename: str):
-    with open(filename, "r") as file:
-        line = file.readline().strip()
-        parts = line.split()
-        a, b, c = map(float, parts)
-        calc_quadratic(a,b,c)
+    if not os.path.exists(filename):
+        print(f"file {filename} does not exist", file=sys.stdout)
+        sys.exit(1)
+
+    try:
+        with open(filename, "r") as file:
+            line = file.readline().strip()
+            parts = line.split()
+            if len(parts) != 3:
+                raise ValueError("invalid file format")
+            a, b, c = map(float, parts)
+            calc_quadratic(a,b,c)
+    except ValueError:
+        print("invalid file format", file=sys.stdout)
+        sys.exit(1)
     
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        interactive_mod()
+        try:
+            interactive_mod()
+        except OSError:
+            print("Error. Input is not supported in this case.")
     elif len(sys.argv) == 2:
         file_mod(sys.argv[1])
     else:

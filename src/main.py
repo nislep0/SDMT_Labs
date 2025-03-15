@@ -31,4 +31,4 @@ def get_float_input(prompt):
             print(f"Error. Expected a valid real number, got {value} instead.")            
 
 if __name__ == "__main__":
-    calc_quadratic(1,2,0)
+    print("Usage: python main.py [filename]")

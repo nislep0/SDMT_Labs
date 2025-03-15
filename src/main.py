@@ -39,5 +39,18 @@ def interactive_mod():
     c = get_float_input("c = ")
     calc_quadratic(a,b,c)
 
+def file_mod(filename: str):
+    with open(filename, "r") as file:
+        line = file.readline().strip()
+        parts = line.split()
+        a, b, c = map(float, parts)
+        calc_quadratic(a,b,c)
+    
 if __name__ == "__main__":
-    interactive_mod()
+    if len(sys.argv) == 1:
+        interactive_mod()
+    elif len(sys.argv) == 2:
+        file_mod(sys.argv[1])
+    else:
+        print("Usage: python main.py [filename]")
+        sys.exit(1)

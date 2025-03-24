@@ -9,7 +9,7 @@ class ArrayList:
         self.data.append(element)
 
     def insert(self, element: str, index: int) -> None:
-        if index < 0 or index >= self.length():
+        if index < 0 or index > self.length():
             raise IndexError("Index out of range")
         self.data.insert(index, element)
 

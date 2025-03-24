@@ -27,5 +27,5 @@ jobs:
 
       - name: Run tests
         run: |
-	  python -m unittest discover -s lab1/tests -p "*.py"
+          python -m unittest discover -s lab1/tests -p "*.py"
           python -m unittest discover -s lab2/tests -p "*.py"
